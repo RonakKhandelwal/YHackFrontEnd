@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.leetcoderecommendation.R;
@@ -28,6 +29,8 @@ public class DashboardFragment extends Fragment {
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         recyclerView = root.findViewById(R.id.leaderboard_recycler_view);
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(manager);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter();
         recyclerView.setAdapter(adapter);
         return root;
@@ -36,6 +39,6 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        NetworkTask.testApi();
+//        NetworkTask.testApi();
     }
 }

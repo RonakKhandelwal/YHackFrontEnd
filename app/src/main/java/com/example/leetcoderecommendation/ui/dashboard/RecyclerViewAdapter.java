@@ -27,18 +27,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.leaderboard_list_item,
                 parent, false);
-
         return new MyViewHolder(root);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         //TODO: Do something with the data
+        System.out.println("");
     }
 
     @Override
     public int getItemCount() {
-        //TODO: Return item count
         return 2;
     }
 }
