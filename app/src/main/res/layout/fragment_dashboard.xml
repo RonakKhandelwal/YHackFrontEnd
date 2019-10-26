@@ -4,11 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <androidx.recyclerview.widget.RecyclerView
+    <com.anychart.AnyChartView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
-        android:id="@+id/leaderboard_recycler_view"
+        android:id="@+id/circular_view"
         />
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="#000000"-->
+<!--        android:id="@+id/leaderboard_recycler_view"-->
+<!--        />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
