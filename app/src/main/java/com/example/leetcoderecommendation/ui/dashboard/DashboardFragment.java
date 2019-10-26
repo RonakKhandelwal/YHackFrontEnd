@@ -16,12 +16,14 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.anychart.APIlib;
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.SingleValueDataSet;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.CircularGauge;
+import com.anychart.charts.Pie;
 import com.anychart.charts.Radar;
 import com.anychart.core.axes.Circular;
 import com.anychart.core.gauge.pointers.Bar;
@@ -49,7 +51,24 @@ public class DashboardFragment extends Fragment {
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         AnyChartView anyChartView = root.findViewById(R.id.circular_view);
+        AnyChartView anyChartView1 = root.findViewById(R.id.pie_chart);
+        anyChartView1.setProgressBar(root.findViewById(R.id.progress_bar));
+        APIlib.getInstance().setActiveAnyChartView(anyChartView1);
+        //Creating the Pie chart
+        Pie pie = AnyChart.pie();
+        List<DataEntry> pieData = new ArrayList<>();
+        pieData.add(new ValueDataEntry("Easy", 60));
+        pieData.add(new ValueDataEntry("Medium", 67));
+        pieData.add(new ValueDataEntry("Hard", 13));
+        pie.data(pieData);
+        pie.labels().position("outside");
+        pie.legend().title().enabled(true);
+        anyChartView1.setChart(pie);
+
+
+//        Creating the Radar
         anyChartView.setProgressBar(root.findViewById(R.id.progress_bar));
+        APIlib.getInstance().setActiveAnyChartView(anyChartView);
         Radar radar = AnyChart.radar();
         radar.yScale().minimum(0d);
         radar.yScale().minimumGap(0d);
