@@ -1,19 +1,31 @@
 package com.example.leetcoderecommendation.ui.home;
 
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.leetcoderecommendation.Recommendations;
+import com.example.leetcoderecommendation.StatsFragment;
+
 public class HomeViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<Fragment> mFragment1;
+    private MutableLiveData<Fragment> mFragment2;
 
     public HomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mFragment1 = new MutableLiveData<>();
+        mFragment2 = new MutableLiveData<>();
+        mFragment1.setValue(new StatsFragment());
+        mFragment2.setValue(new Recommendations());
+
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<Fragment> getFirstFragment() {
+        return mFragment1;
+    }
+
+    public LiveData<Fragment> getSecondFragment() {
+        return mFragment2;
     }
 }
