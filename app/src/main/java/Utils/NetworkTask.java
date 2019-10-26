@@ -42,7 +42,7 @@ public class NetworkTask {
     }
 
 
-    public static void testApi(){
+    public static void testApi() {
         NetworkingUtils.getUserService()
                 .testApi()
                 .observeOn(AndroidSchedulers.mainThread())
