@@ -4,6 +4,7 @@ import java.util.List;
 
 import Networking.Callback;
 import Networking.Modals.Recommendation;
+import Networking.Modals.TestApi;
 import Networking.Modals.UserStats;
 import Networking.NetworkingUtils;
 import io.reactivex.Observer;
@@ -31,6 +32,35 @@ public class NetworkTask {
                     @Override
                     public void onError(Throwable e) {
                         callback.returnError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+
+    public static void testApi(){
+        NetworkingUtils.getUserService()
+                .testApi()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(String value) {
+                        System.out.println(value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        System.out.println(e.getCause());
                     }
 
                     @Override

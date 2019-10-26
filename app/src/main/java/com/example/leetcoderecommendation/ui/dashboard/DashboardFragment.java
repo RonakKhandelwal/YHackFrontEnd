@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import Networking.NetworkingUtils;
+import Utils.NetworkTask;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -29,5 +31,11 @@ public class DashboardFragment extends Fragment {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter();
         recyclerView.setAdapter(adapter);
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        NetworkTask.testApi();
     }
 }

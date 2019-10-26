@@ -39,6 +39,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         //TODO: Return item count
-        return 0;
+        return 2;
     }
 }
