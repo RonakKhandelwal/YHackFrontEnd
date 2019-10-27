@@ -39,7 +39,7 @@ public class NotificationsFragment extends Fragment {
         notificationsViewModel =
                 ViewModelProviders.of(this).get(NotificationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        FloatingActionButton fab_chat = root.findViewById(R.id.fab_new_chat);
+        FloatingActionButton fab_chat = root.findViewById(R.id.fb_new_chat);
         fab_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -147,25 +147,25 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/no_thumbnail_options"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="gone" >
+<!--        <LinearLayout-->
+<!--            android:id="@+id/no_thumbnail_options"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:visibility="gone" >-->
 
-            <CheckBox
-                android:id="@+id/no_thumbnail_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+<!--            <CheckBox-->
+<!--                android:id="@+id/no_thumbnail_checkbox"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content" />-->
 
-            <TextView
-                android:id="@+id/no_thumbnail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/no_thumbnail"
-                android:textSize="14sp" />
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/no_thumbnail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/no_thumbnail"-->
+<!--                android:textSize="14sp" />-->
+<!--        </LinearLayout>-->
     </LinearLayout>
 
 </LinearLayout>

@@ -78,8 +78,8 @@ public class Recommendations extends Fragment {
                         .findViewById(R.id.title_wrap);
                 final LinearLayout thumbnailOptions = content
                         .findViewById(R.id.thumbnail_options);
-                final LinearLayout noThumbnailOptions = content
-                        .findViewById(R.id.no_thumbnail_options);
+//                final LinearLayout noThumbnailOptions = content
+//                        .findViewById(R.id.no_thumbnail_options);
 
                 final ImageView imageSet = content
                         .findViewById(R.id.image_post_set);
@@ -96,8 +96,8 @@ public class Recommendations extends Fragment {
                         .findViewById(R.id.input_description);
                 final TextView countTextView = thumbnailOptions
                         .findViewById(R.id.count);
-                final CheckBox noThumbCheckBox = noThumbnailOptions
-                        .findViewById(R.id.no_thumbnail_checkbox);
+//                final CheckBox noThumbCheckBox = noThumbnailOptions
+//                        .findViewById(R.id.no_thumbnail_checkbox);
                 final Button previousButton = thumbnailOptions
                         .findViewById(R.id.post_previous);
                 final Button forwardButton = thumbnailOptions
@@ -243,7 +243,7 @@ public class Recommendations extends Fragment {
 
                         thumbnailOptions.setVisibility(View.VISIBLE);
                     }
-                    noThumbnailOptions.setVisibility(View.VISIBLE);
+//                    noThumbnailOptions.setVisibility(View.VISIBLE);
 
                     UrlImageViewHelper.setUrlDrawable(imageSet, sourceContent
                             .getImages().get(0), new UrlImageViewCallback() {

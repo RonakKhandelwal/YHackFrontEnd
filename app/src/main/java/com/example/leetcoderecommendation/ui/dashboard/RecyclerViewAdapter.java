@@ -12,24 +12,23 @@ import com.example.leetcoderecommendation.R;
 
 import java.util.List;
 
-import Networking.Modals.QuestionDetailsModal;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
-    List<QuestionDetailsModal> questions;
+    List<networking.Modals.QuestionDetailsModal> questions;
     Context mContext;
 
-    public RecyclerViewAdapter(List<QuestionDetailsModal> questions, Context context) {
+    public RecyclerViewAdapter(List<networking.Modals.QuestionDetailsModal> questions, Context context) {
         super();
         this.questions = questions;
         this.mContext = context;
     }
 
 
-    public void update(List<QuestionDetailsModal> questions) {
+    public void update(List<networking.Modals.QuestionDetailsModal> questions) {
         this.questions = questions;
     }
 
@@ -54,7 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (null != questions) {
-            final QuestionDetailsModal question = this.questions.get(position);
+            final networking.Modals.QuestionDetailsModal question = this.questions.get(position);
             MyViewHolder viewHolder = (MyViewHolder) holder;
             TextView title = viewHolder.title;
             TextView difficulty = viewHolder.difficulty;

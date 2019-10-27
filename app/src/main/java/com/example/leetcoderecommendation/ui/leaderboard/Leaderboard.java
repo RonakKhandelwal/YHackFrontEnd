@@ -4,8 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
-import Networking.Callback;
-import Networking.Modals.QuestionDetailsModal;
 import Utils.NetworkTask;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
