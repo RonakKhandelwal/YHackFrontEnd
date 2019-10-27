@@ -4,37 +4,21 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import Networking.NetworkingUtils;
-import Utils.NetworkTask;
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.anychart.APIlib;
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
-import com.anychart.chart.common.dataentry.SingleValueDataSet;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
-import com.anychart.charts.CircularGauge;
 import com.anychart.charts.Pie;
 import com.anychart.charts.Radar;
-import com.anychart.core.axes.Circular;
-import com.anychart.core.gauge.pointers.Bar;
 import com.anychart.core.radar.series.Line;
-import com.anychart.enums.Align;
-import com.anychart.enums.Anchor;
 import com.anychart.enums.MarkerType;
-import com.anychart.graphics.vector.Fill;
-import com.anychart.graphics.vector.SolidFill;
-import com.anychart.graphics.vector.text.HAlign;
-import com.anychart.graphics.vector.text.VAlign;
 import com.example.leetcoderecommendation.R;
 
 import java.util.ArrayList;

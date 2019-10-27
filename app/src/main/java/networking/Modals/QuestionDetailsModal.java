@@ -1,5 +1,5 @@
 
-package Networking.Modals;
+package networking.Modals;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
