@@ -15,20 +15,22 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import Networking.Modals.QuestionDetailsModal;
+
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
-    List<networking.Modals.QuestionDetailsModal> questions;
+    List<QuestionDetailsModal> questions;
     Context mContext;
 
-    public RecyclerViewAdapter(List<networking.Modals.QuestionDetailsModal> questions, Context context) {
+    public RecyclerViewAdapter(List<QuestionDetailsModal> questions, Context context) {
         super();
         this.questions = questions;
         this.mContext = context;
     }
 
 
-    public void update(List<networking.Modals.QuestionDetailsModal> questions) {
+    public void update(List<QuestionDetailsModal> questions) {
         this.questions = questions;
     }
 
@@ -53,7 +55,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (null != questions) {
-            final networking.Modals.QuestionDetailsModal question = this.questions.get(position);
+            final QuestionDetailsModal question = this.questions.get(position);
             MyViewHolder viewHolder = (MyViewHolder) holder;
             TextView title = viewHolder.title;
             TextView difficulty = viewHolder.difficulty;

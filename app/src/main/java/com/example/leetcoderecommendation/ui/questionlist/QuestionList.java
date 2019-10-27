@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import Networking.Callback;
+import Networking.Modals.QuestionDetailsModal;
 import Utils.NetworkTask;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -35,9 +37,9 @@ public class QuestionList extends Fragment {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(null, getContext());
         recyclerView.setAdapter(adapter);
         final ProgressBar pb = root.findViewById(R.id.progress_bar);
-        NetworkTask.getQuestions(new networking.Callback<List<networking.Modals.QuestionDetailsModal>>() {
+        NetworkTask.getQuestions(new Callback<List<QuestionDetailsModal>>() {
             @Override
-            public void returnResult(List<networking.Modals.QuestionDetailsModal> questionDetailsModals) {
+            public void returnResult(List<QuestionDetailsModal> questionDetailsModals) {
                 RecyclerViewAdapter adapter = ((RecyclerViewAdapter) recyclerView.getAdapter());
                 pb.setVisibility(View.GONE);
                 if (null != adapter) {
