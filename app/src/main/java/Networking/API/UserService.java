@@ -22,4 +22,7 @@ public interface UserService {
 
     @GET("questions")
     Observable<List<QuestionDetailsModal>> getQuestions();
+
+    @GET("questions/user/mayank4396/next")
+    Observable<QuestionDetailsModal> getNextQuestion();
 }

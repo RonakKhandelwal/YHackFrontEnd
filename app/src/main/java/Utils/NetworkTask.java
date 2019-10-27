@@ -72,7 +72,36 @@ public class NetworkTask {
     }
 
 
-    public static void getQuestions(final Callback<List<QuestionDetailsModal>> callback){
+    public static void getNextQuestion(final Callback<QuestionDetailsModal> callback) {
+        NetworkingUtils.getUserService()
+                .getNextQuestion()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<QuestionDetailsModal>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(QuestionDetailsModal value) {
+                        callback.returnResult(value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callback.returnError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+
+    public static void getQuestions(final Callback<List<QuestionDetailsModal>> callback) {
         NetworkingUtils.getUserService()
                 .getQuestions()
                 .observeOn(AndroidSchedulers.mainThread())

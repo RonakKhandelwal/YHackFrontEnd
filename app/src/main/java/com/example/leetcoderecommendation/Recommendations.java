@@ -1,5 +1,8 @@
 package com.example.leetcoderecommendation;
 
+import Networking.Callback;
+import Networking.Modals.QuestionDetailsModal;
+import Utils.NetworkTask;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -46,7 +49,7 @@ public class Recommendations extends Fragment {
                 ViewModelProviders.of(this).get(RecommendationsViewModel.class);
         final View root = inflater.inflate(R.layout.recommendations_fragment, container, false);
 
-        LinkPreviewCallback linkPreviewCallback = new LinkPreviewCallback() {
+        final LinkPreviewCallback linkPreviewCallback = new LinkPreviewCallback() {
 
             private View mainView;
             private LinearLayout linearLayout;
@@ -274,7 +277,7 @@ public class Recommendations extends Fragment {
                 urlTextView.setText(sourceContent.getCannonicalUrl());
                 descriptionTextView.setText(sourceContent.getDescription());
 
-                if(root instanceof CardView){
+                if (root instanceof CardView) {
                     CardView cardView = (CardView) root;
                     Log.d("YHack", "here" + sourceContent.getUrlData()[0] + sourceContent.getUrlData()[1]);
                     cardView.addView(content);
@@ -282,8 +285,21 @@ public class Recommendations extends Fragment {
 
             }
         };
+        NetworkTask.getNextQuestion(new Callback<QuestionDetailsModal>() {
+            @Override
+            public void returnResult(QuestionDetailsModal questionDetailsModal) {
+                if (null == questionDetailsModal) {
+                    return;
+                }
+                textCrawler.makePreview(linkPreviewCallback, questionDetailsModal.getUrl());
+            }
 
-        textCrawler.makePreview( linkPreviewCallback, "https://leetcode.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/");
+            @Override
+            public void returnError(String message) {
+                Log.e("Recommendations", message);
+            }
+        });
+
 
         return root;
         //return inflater.inflate(R.layout.recommendations_fragment, container, false);
