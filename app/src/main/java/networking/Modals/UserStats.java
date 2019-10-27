@@ -1,4 +1,4 @@
-package networking.Modals;
+package Networking.Modals;
 
 public class UserStats {
 

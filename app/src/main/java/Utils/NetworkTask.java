@@ -2,11 +2,11 @@ package Utils;
 
 import java.util.List;
 
-import networking.Callback;
-import networking.Modals.QuestionDetailsModal;
-import networking.Modals.Recommendation;
-import networking.Modals.UserStats;
-import networking.NetworkingUtils;
+import Networking.Callback;
+import Networking.Modals.QuestionDetailsModal;
+import Networking.Modals.Recommendation;
+import Networking.Modals.UserStats;
+import Networking.NetworkingUtils;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
