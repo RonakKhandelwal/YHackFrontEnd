@@ -15,15 +15,15 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center_vertical|left"
-        android:text="Metric 1"
+        android:id="@+id/title_tv"
         />
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_vertical|right"
-        android:text="Metric 2"
-        />
+<!--    <TextView-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_gravity="center_vertical|right"-->
+<!--        android:id="@+id/difficulty"-->
+<!--        />-->
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,14 +33,14 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_gravity="center_vertical|left"
-            android:text="Metric 3"
+            android:id="@+id/difficulty"
             />
 
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center_vertical|right"
-            android:text="Metric 4"
-            />
+<!--        <TextView-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_gravity="center_vertical|right"-->
+<!--            android:text="Metric 4"-->
+<!--            />-->
     </LinearLayout>
 </LinearLayout>

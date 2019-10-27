@@ -75,6 +75,16 @@ public class QuestionDetailsModal {
         return difficultyLevel;
     }
 
+    public String getDifficulty(){
+        if (this.difficultyLevel == 1){
+            return "Easy";
+        } else if(this.difficultyLevel == 2){
+            return "Medium";
+        } else {
+            return "Hard";
+        }
+    }
+
     public void setDifficultyLevel(Integer difficultyLevel) {
         this.difficultyLevel = difficultyLevel;
     }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LeetcodeRecommendation</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Leaderboard</string>
+    <string name="title_dashboard">Questions</string>
     <string name="title_notifications">Notifications</string>
 
     <string name="empty" translatable="false" />

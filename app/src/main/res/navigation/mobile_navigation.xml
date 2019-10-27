@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.leetcoderecommendation.ui.leaderboard.Leaderboard"
+        android:name="com.example.leetcoderecommendation.ui.questionlist.QuestionList"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_leaderboard" />
+        tools:layout="@layout/fragment_question_list" />
 
     <fragment
         android:id="@+id/navigation_notifications"

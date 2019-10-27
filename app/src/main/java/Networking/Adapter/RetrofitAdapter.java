@@ -8,7 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitAdapter {
-    private static final String BASE_URL = "http://192.168.43.188:8080";
+    private static final String BASE_URL = "https://yhack-leetcode.appspot.com/question/";
     private static Retrofit retrofit;
     private static Gson gson;
 
@@ -25,7 +25,6 @@ public class RetrofitAdapter {
                     .build();
 
         }
-
         return retrofit;
     }
 }
