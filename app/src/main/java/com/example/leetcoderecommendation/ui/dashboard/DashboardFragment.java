@@ -62,7 +62,6 @@ public class DashboardFragment extends Fragment {
         pieData.add(new ValueDataEntry("Hard", 13));
         pie.data(pieData);
         pie.labels().position("outside");
-        pie.legend().title().enabled(true);
         anyChartView1.setChart(pie);
 
 
