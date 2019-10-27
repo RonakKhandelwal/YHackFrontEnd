@@ -4,11 +4,8 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.List;
+import io.kommunicate.Kommunicate;
 
-import Networking.Callback;
-import Networking.Modals.Recommendation;
-import Utils.NetworkTask;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -16,6 +13,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
+
+    final String APP_ID = BuildConfig.APP_ID;
+    final String API_KEY = "lkNbH2bwdOGvD8fTVPqlTWfcYbs6Afff";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        //
+        Kommunicate.init(this, APP_ID);
 
         //Usage Instance
         /*

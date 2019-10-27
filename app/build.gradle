@@ -10,6 +10,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "APP_ID", '"3b17bcd21e27d535762cf4fdbb66edb0"'
     }
     buildTypes {
         release {
@@ -43,4 +45,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.8.3'
     implementation 'com.leocardz:link-preview:2.0.0@aar'
     implementation 'com.koushikdutta.urlimageviewhelper:urlimageviewhelper:1.0.4'
+
+//    implementation 'io.kommunicate:kommunicate:1.9.0'
+    implementation 'io.kommunicate:kommunicateui:1.9.1'
 }

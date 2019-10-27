@@ -1,7 +1,7 @@
-package Networking;
+package networking;
 
-import Networking.API.UserService;
-import Networking.Adapter.RetrofitAdapter;
+import networking.api.UserService;
+import networking.adapter.RetrofitAdapter;
 
 public class NetworkingUtils {
     private static UserService userService;

@@ -1,11 +1,10 @@
-package Networking.API;
+package networking.api;
 
 import java.util.List;
 
-import Networking.Modals.QuestionDetailsModal;
-import Networking.Modals.Recommendation;
-import Networking.Modals.TestApi;
-import Networking.Modals.UserStats;
+import networking.Modals.QuestionDetailsModal;
+import networking.Modals.Recommendation;
+import networking.Modals.UserStats;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 

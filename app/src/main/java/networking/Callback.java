@@ -1,4 +1,4 @@
-package Networking;
+package networking;
 
 public abstract class Callback<T> {
     public abstract void returnResult(T t);
