@@ -16,6 +16,7 @@ import Networking.Modals.QuestionDetailsModal;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     List<QuestionDetailsModal> questions;
@@ -44,7 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.leaderboard_list_item,
+        View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.question_list_item,
                 parent, false);
         return new MyViewHolder(root, (TextView)root.findViewById(R.id.title_tv), (TextView)root.findViewById(R.id.difficulty));
 
@@ -67,6 +68,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
             if (question != null) {
                 title.setText(question.getTitle());
                 difficulty.setText(question.getDifficulty());
+                if (question.getDifficultyLevel() == 1){
+                    difficulty.setBackgroundColor(mContext.getColor(R.color.green));
+                } else if(question.getDifficultyLevel() == 2){
+                    difficulty.setBackgroundColor(mContext.getColor(R.color.blue));
+                } else {
+                    difficulty.setBackgroundColor(mContext.getColor(R.color.red));
+                }
             }
         }
     }

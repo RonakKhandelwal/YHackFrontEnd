@@ -16,6 +16,9 @@
     <color name="second_shadow">#20CCCCCC</color>
     <color name="third_shadow">#30CCCCCC</color>
     <color name="fourth_shadow">#50CCCCCC</color>
+    <color name="green">#A1B56C</color>
+    <color name="blue">#CC33B5E5</color>
+    <color name="red">#AB4642</color>
 
     <!--  -->
     <color name="pressed_example">#CC33B5E5</color>
