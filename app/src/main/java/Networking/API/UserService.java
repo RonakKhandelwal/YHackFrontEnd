@@ -2,6 +2,7 @@ package Networking.API;
 
 import java.util.List;
 
+import Networking.Modals.QuestionDetailsModal;
 import Networking.Modals.Recommendation;
 import Networking.Modals.TestApi;
 import Networking.Modals.UserStats;
@@ -18,4 +19,7 @@ public interface UserService {
 
     @GET("/recommendationSystem")
     Observable<String> testApi();
+
+    @GET("/question")
+    Observable<List<QuestionDetailsModal>> getQuestions();
 }

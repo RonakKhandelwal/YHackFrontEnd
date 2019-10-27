@@ -3,6 +3,7 @@ package Utils;
 import java.util.List;
 
 import Networking.Callback;
+import Networking.Modals.QuestionDetailsModal;
 import Networking.Modals.Recommendation;
 import Networking.Modals.TestApi;
 import Networking.Modals.UserStats;
@@ -61,6 +62,35 @@ public class NetworkTask {
                     @Override
                     public void onError(Throwable e) {
                         System.out.println(e.getCause());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+
+    public static void getQuestions(final Callback<List<QuestionDetailsModal>> callback){
+        NetworkingUtils.getUserService()
+                .getQuestions()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<List<QuestionDetailsModal>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(List<QuestionDetailsModal> value) {
+                        callback.returnResult(value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callback.returnError(e.getMessage());
                     }
 
                     @Override
