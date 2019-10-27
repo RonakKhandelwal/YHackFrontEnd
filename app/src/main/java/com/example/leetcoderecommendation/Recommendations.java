@@ -6,13 +6,16 @@ import Utils.NetworkTask;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,12 +45,49 @@ public class Recommendations extends Fragment {
     private Bitmap[] currentImageSet;
     private Bitmap currentImage;
 
+    TextView titleTextView, urlTextView, descriptionTextView;
+    String target_url = "https://leetcode.com/problems/distribute-coins-in-binary-tree/";
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         mViewModel =
                 ViewModelProviders.of(this).get(RecommendationsViewModel.class);
         final View root = inflater.inflate(R.layout.recommendations_fragment, container, false);
+
+        final LinearLayout infoWrap = root
+                .findViewById(R.id.info_wrap);
+        infoWrap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(target_url));
+                startActivity(browserIntent);
+            }
+        });
+        final LinearLayout titleWrap = infoWrap
+                .findViewById(R.id.title_wrap);
+        final LinearLayout thumbnailOptions = root
+                .findViewById(R.id.thumbnail_options);
+//                final LinearLayout noThumbnailOptions = content
+//                        .findViewById(R.id.no_thumbnail_options);
+
+//                final ImageView imageSet = content
+//                        .findViewById(R.id.image_post_set);
+
+        titleTextView = titleWrap
+                .findViewById(R.id.title);
+        final EditText titleEditText = titleWrap
+                .findViewById(R.id.input_title);
+        urlTextView = root
+                .findViewById(R.id.url);
+        descriptionTextView = root
+                .findViewById(R.id.description);
+        final EditText descriptionEditText = root
+                .findViewById(R.id.input_description);
+        final TextView countTextView = thumbnailOptions
+                .findViewById(R.id.count);
+
+
 
         final LinkPreviewCallback linkPreviewCallback = new LinkPreviewCallback() {
 
@@ -84,8 +124,8 @@ public class Recommendations extends Fragment {
 //                final LinearLayout noThumbnailOptions = content
 //                        .findViewById(R.id.no_thumbnail_options);
 
-                final ImageView imageSet = content
-                        .findViewById(R.id.image_post_set);
+//                final ImageView imageSet = content
+//                        .findViewById(R.id.image_post_set);
 
                 final TextView titleTextView = titleWrap
                         .findViewById(R.id.title);
@@ -248,19 +288,19 @@ public class Recommendations extends Fragment {
                     }
 //                    noThumbnailOptions.setVisibility(View.VISIBLE);
 
-                    UrlImageViewHelper.setUrlDrawable(imageSet, sourceContent
-                            .getImages().get(0), new UrlImageViewCallback() {
-
-                        @Override
-                        public void onLoaded(ImageView imageView,
-                                             Bitmap loadedBitmap, String url,
-                                             boolean loadedFromCache) {
-                            if (loadedBitmap != null) {
-                                currentImage = loadedBitmap;
-                                currentImageSet[0] = loadedBitmap;
-                            }
-                        }
-                    });
+//                    UrlImageViewHelper.setUrlDrawable(imageSet, sourceContent
+//                            .getImages().get(0), new UrlImageViewCallback() {
+//
+//                        @Override
+//                        public void onLoaded(ImageView imageView,
+//                                             Bitmap loadedBitmap, String url,
+//                                             boolean loadedFromCache) {
+//                            if (loadedBitmap != null) {
+//                                currentImage = loadedBitmap;
+//                                currentImageSet[0] = loadedBitmap;
+//                            }
+//                        }
+//                    });
 
                 }
 //                else {
@@ -280,18 +320,33 @@ public class Recommendations extends Fragment {
                 if (root instanceof CardView) {
                     CardView cardView = (CardView) root;
                     Log.d("YHack", "here" + sourceContent.getUrlData()[0] + sourceContent.getUrlData()[1]);
+                    cardView.removeAllViews();
                     cardView.addView(content);
                 }
 
             }
         };
+
+
+
         NetworkTask.getNextQuestion(new Callback<QuestionDetailsModal>() {
+
             @Override
             public void returnResult(QuestionDetailsModal questionDetailsModal) {
                 if (null == questionDetailsModal) {
                     return;
                 }
-                textCrawler.makePreview(linkPreviewCallback, questionDetailsModal.getUrl());
+//                textCrawler.makePreview(linkPreviewCallback, questionDetailsModal.getUrl());
+                if (questionDetailsModal.getTitle().equals(""))
+                    questionDetailsModal.setTitle(getString(R.string.enter_title));
+                if (questionDetailsModal.getDescription().equals(""))
+                    questionDetailsModal
+                            .setDescription(getString(R.string.enter_description));
+
+                titleTextView.setText(questionDetailsModal.getTitle());
+                urlTextView.setText(questionDetailsModal.getUrl());
+                descriptionTextView.setText(Html.fromHtml(questionDetailsModal.getDescription()));
+                target_url = questionDetailsModal.getUrl();
             }
 
             @Override

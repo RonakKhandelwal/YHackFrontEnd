@@ -12,6 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
 
+    <TextView
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginStart="5dp"
+        android:text="Recommended Question:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <FrameLayout
         android:id="@+id/fl2"
         android:padding="@dimen/frame_internal_padding"
