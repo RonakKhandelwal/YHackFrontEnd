@@ -1,5 +1,4 @@
-
-package networking.Modals;
+package Networking.Modals;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
@@ -137,7 +136,7 @@ public class QuestionDetailsModal {
         this.companyQuestions = companyQuestions;
     }
 
-    public List<RelatedTopic> getRelatedTopics() {
+    public List<Networking.Modals.RelatedTopic> getRelatedTopics() {
         return relatedTopics;
     }
 

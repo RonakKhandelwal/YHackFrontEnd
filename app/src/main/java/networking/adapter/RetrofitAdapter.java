@@ -1,4 +1,4 @@
-package networking.adapter;
+package Networking.Adapter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
