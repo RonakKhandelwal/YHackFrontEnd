@@ -20,6 +20,6 @@ public interface UserService {
     @GET("/recommendationSystem")
     Observable<String> testApi();
 
-    @GET("/question")
+    @GET("questions")
     Observable<List<QuestionDetailsModal>> getQuestions();
 }

@@ -50,6 +50,7 @@ public class QuestionList extends Fragment {
 
             @Override
             public void returnError(String message) {
+                pb.setVisibility(View.GONE);
                 Log.e("QuestionList", message);
             }
         });
