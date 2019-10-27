@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.leetcoderecommendation.Recommendations;
-import com.example.leetcoderecommendation.ui.dashboard.DashboardFragment;
+import com.example.leetcoderecommendation.StatsFragment;
 
 public class HomeViewModel extends ViewModel {
 
@@ -16,7 +16,7 @@ public class HomeViewModel extends ViewModel {
     public HomeViewModel() {
         mFragment1 = new MutableLiveData<>();
         mFragment2 = new MutableLiveData<>();
-        mFragment1.setValue(new DashboardFragment());
+        mFragment1.setValue(new StatsFragment());
         mFragment2.setValue(new Recommendations());
 
     }

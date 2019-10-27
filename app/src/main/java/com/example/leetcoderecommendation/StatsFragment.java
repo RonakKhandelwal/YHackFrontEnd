@@ -1,5 +1,7 @@
 package com.example.leetcoderecommendation;
 
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -12,7 +14,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import com.example.leetcoderecommendation.ui.dashboard.DashboardFragment;
 
 public class StatsFragment extends Fragment {
 
@@ -36,6 +41,11 @@ public class StatsFragment extends Fragment {
 //                textView.setText(s);
 //            }
 //        });
+        if (root instanceof CardView){
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.add(R.id.ft_stats, new DashboardFragment());
+            ft.commit();
+        }
         return root;
         //return inflater.inflate(R.layout.stats_fragment, container, false);
     }
